@@ -1,3 +1,87 @@
+.header-bg{
+    background-image: url('./images-d/bgheader.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: relative;
+}
+.bg-logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bg-logo>img{
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    
+}
+.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(18%,40%);
+}
+.logo>img{
+    object-fit: cover;
+    overflow: hidden;
+    width: 90%;
+}
+.header-left{
+    text-align: center;
+}
+.header-heading
+{
+    font-size: 40px;
+    color: text-linear-gradient(90deg, #FFA903 -4.08%, #FFE713 32.99%, #FFB408 56.23%, #FFE613 77.55%, #FFB609 91.58%);
+    text-transform: uppercase;
+}
+.header-title{
+    font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 41px;
+
+color: #000000;
+text-transform: uppercase;
+}
+.header-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: calc(100% - 864px);
+}
+.header-right{
+    display: flex;
+    justify-content: space-between;
+}
+.header-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+.menu{
+    background: linear-gradient(90deg, #FFEE2C -5.16%, #FFB90A 22.98%, #FFB308 56.51%, #FFED23 69.09%, #FFA903 95.12%);
+
+    padding-left: calc(100% - 864px);
+    margin-top: 28px;
+}
+.menu>ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    text-decoration: none;
+    list-style: none;
+}
+.menu>ul>li{
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+}
+
 @font-face {
     font-family: 'Saira';
     src: url('../../font-d/Saira/static/Saira/Saira-Bold.ttf');
@@ -12,6 +96,8 @@
 }
 body{
     font-family: 'Saira', cursive;
+    min-width: 1200px;
+    margin: 0 auto;
 }
 a {
 	/* display: block;
@@ -516,3 +602,43 @@ a.button:hover {
 .copyright{
     background-color: #26469d;
 }
+
+/* 
+carrdshdow */
+.shadow {
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+  }
+  .shadow:before,
+  .shadow:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    will-change: opacity;
+  }
+  .shadow:before {
+    box-shadow: 0 35px 50px -30px rgba(0,0,0,0.2);
+  }
+  .shadow:after {
+    opacity: 0;
+    box-shadow: 0 55px 50px -17px rgba(0,0,0,0.22);
+  }
+  .shadow:hover {
+    transform: translateY(-5%);
+  }
+  .shadow:hover:before {
+    opacity: 0;
+  }
+  .shadow:hover:after {
+    opacity: 1;
+  }
+  .shadow:active {
+    transform: translateY(5%) scale(0.9);
+  }
