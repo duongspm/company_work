@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+/* === GLOBAL STYLES === */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.row {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.row:last-child {
+    margin-bottom: 0px;
+}
+
+.row .container {
+    width: 48%;
+    min-width: 450px;
+    max-width: 650px;
+    box-shadow: 0 0 0px 4px rgba(18, 18, 18, 0.47);
+}
+
+.container:hover {
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.47);
+}
+
+.row:nth-of-type(1) .container {
+    width: 31%;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+.row img {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.row .caption {
+    cursor: pointer;
+}
+
+.row h2 {
+    display: inline;
+    background: rgba(51, 51, 51, 0.5);
+    padding: 15px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.row p {
+    display: inline;
+    background: rgba(51, 51, 51, 0.7);
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1900px) {
+    .row {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .row {
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+    }
+
+    .row .container {
+        width: 60%;
+        min-width: 650px;
+        margin: 40px 0;
+    }
+
+    .row:nth-of-type(1) .container {
+        width: 41%;
+        min-width: 450px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .row {
+        margin-top: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+    }
+
+    .container {
+        margin: 210px 0;
+    }
+
+    .row .container {
+        min-width: 450px;
+    }
+
+    .row:nth-of-type(1) .container {
+        min-width: 350px;
+    }
+
+    .effect10 p {
+        width: 80%;
+    }
+
+    .effect13 .caption p {
+        margin-top: 30px;
+    }
+
+    .effect6 .caption h2 {
+        font-size: 20px !important;
+    }
+
+    .effect6 .caption p {
+        font-size: 12px !important;
+    }
+}
+
+
+
+
+
+/* 
+    ===== Effect 7 =====
+*/
+.effect7 {
+    position: relative;
+    overflow: hidden;
+    perspective: 40em;
+}
+
+/* Hover Element */
+.effect7 .caption {
+    content: "";
+    display: block;
+    background-color: #262626;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    outline: 1px solid rgba(255, 255, 255, 0.72);
+    outline-offset: -15px;
+
+    transform: rotateX(-90deg);
+    transform-origin: 50% 50%;
+    opacity: 0;
+    transition: transform 0.8s ease-in-out, opacity .8s;
+}
+
+.effect7:hover .caption {
+    transform: rotateX(0);
+    opacity: 0.7;
+}
+
+/* Text */
+.effect7 .caption h2,
+.effect7 .caption p {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    text-align: center;
+    opacity: 0;
+    z-index: 9;
+    transition: all .4s .2s, opacity .4s .2s;
+}
+
+.effect7 .caption h2 {
+    top: 10%;
+    width: 400px;
+}
+
+.effect7 .caption p {
+    top: 90%;
+    width: 300px;
+}
+
+.effect7:hover .caption h2 {
+    top: 28%;
+    opacity: 1;
+}
+
+.effect7:hover .caption p {
+    top: 58%;
+    opacity: 1;
+}
+
+
+
+
+
+/* 
+    ===== Effect 8 =====
+*/
+.effect8 {
+    position: relative;
+    overflow: hidden;
+}
+
+.effect8 img {
+    transition: all 1s;
+}
+
+.effect8:hover img {
+    transform: scale(1.3);
+}
+
+/* Button */
+.effect8 .btn {
+    border: none;
+    outline: none;
+    padding: 10px 35px;
+    background-color: rgba(255, 156, 21, 0.8);
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+    white-space: nowrap;
+    margin-top: 20px;
+    margin-right: 40px;
+    transition: all .5s;
+}
+
+.effect8 .btn:hover {
+    background: rgba(255, 156, 21, 1);
+}
+
+/* Text */
+.effect8 h2 {
+    position: absolute;
+    right: 0px;
+    top: 20%;
+    text-align: right;
+    transform: translateX(700px) scale(0.1);
+    transition: transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.effect8 .btn {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(800px);
+    transition: transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.effect8:hover h2 {
+    transform: translateX(0px) scale(1);
+}
+
+.effect8:hover .btn {
+    left: 50%;
+    transform: translateX(-50%);
+    animation: btnWidth 1.2s forwards;
+}
+
+@keyframes btnWidth {
+    0% {
+        padding: 10px 35px;
+        opacity: .2;
+    }
+
+    50% {
+        padding: 10px 100%;
+    }
+
+    100% {
+        padding: 10px 35px;
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+/* 
+    ===== Effect 10 =====
+*/
+.effect10 {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine effect */
+.effect10 .caption:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -80%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    z-index: 9;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 100%);
+    transform: skewX(-25deg);
+    transition: left .6s;
+}
+
+.effect10:hover .caption:before {
+    left: 125%;
+}
+
+/* Text */
+/* .effect10 h2,
+.effect10 p {
+    position: absolute;
+    left: 0;
+    transform: translateX(-700px) scale(0.1) skewX(95deg);
+}
+
+.effect10 h2 {
+    font-size: 18px;
+    width: 320px;
+    top: 20%;
+    border-right: 12px solid #085d0b;
+    transition: transform .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.effect10 p {
+    top: 45%;
+    border-right: 12px solid #1a8d1e;
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.effect10:hover h2,
+.effect10:hover p {
+    transform: translateX(0px) scale(1) skewX(0deg);
+} */
+
+
+/**/
+.img {
+	 max-width: calc(100% + 20px);
+}
+ .photo {
+	 position: relative;
+	 width: 400px;
+	 overflow: hidden;
+	 line-height: 0;
+}
+ .photo__image {
+	 background: url('https://s-media-cache-ak0.pinimg.com/736x/02/d7/01/02d701b77a984a1b6cf970e6eb0468e1.jpg');
+	 transform: translateX(-20px);
+	 transition: 0.5s;
+}
+ .photo:hover .photo__image {
+	 transform: translateX(0);
+}
+ .photo__overlay {
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 left: 0;
+	 right: 0;
+	 height: 100%;
+	 opacity: 0;
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 color: white;
+	 background-color: rgba(0, 0, 0, 0.5);
+	 transition: 0.3s;
+}
+ .photo:hover .photo__overlay {
+	 opacity: 1;
+}
+ 
+/**/
+
+.image-container{
+  width: 450px;
+  height: 300px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.image-container img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container .image-caption{
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  background: #373F51;
+  font-family: arial;
+  text-align: center;
+  color: #93C0A4;
+  text-transform: uppercase;
+  top: -80px;
+  transition: top 0.5s ease;
+}
+
+.image-container .image-caption h1{
+    margin-top: 15px;
+}
+
+.slider1:before{
+  content: "";
+  position: absolute;
+  top: -160px;
+  left: 0;
+  border-left: 225px solid transparent;
+  border-right: 225px solid transparent;
+  border-top: 150px solid rgba(255,228,219,0.3);
+  border-bottom: 150px solid transparent;
+  transition: top 0.5s ease;
+}
+
+.slider1:after{
+  content: "";
+  position: absolute;
+  top: 160px;
+  left: 0;
+  border-left: 225px solid transparent;
+  border-right: 225px solid transparent;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid rgba(255,228,219,0.3);
+  transition: top 0.5s ease;
+}
+
+.slider2:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -235px;
+  border-left: 225px solid rgba(255,228,219,0.3);
+  border-right: 225px solid transparent;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  transition: left 0.5s ease;
+}
+
+.slider2:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 235px;
+  border-left: 225px solid transparent;
+  border-right: 225px solid rgba(255,228,219,0.3);
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  transition: left 0.5s ease;
+}
+
+.image-container:hover .slider1:before,
+.image-container:hover .slider1:after{
+  top: 0;
+  transition: top 0.5s ease;
+}
+
+.image-container:hover .slider2:before,
+.image-container:hover .slider2:after{
+  left: 0;
+  transition: left 0.5s ease;
+}
+
+.image-container:hover .image-caption{
+  animation: top 1.5s ease 1s forwards;
+}
+
+@keyframes top{
+  0%{
+    top: -80px;
+  }
+  25%{
+    top: 180px;
+  }
+  50%{
+    top: 50px;
+  }
+  75%{
+    top: 150px;
+  }
+  100%{
+    top: 110px;
+  }
+  
+}
+
+/**/
+.main-container {
+  position: relative;
+  margin: 30px;
+  width: 300px;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 300px;
+}
+
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: #FB5660;
+  transform: translateY(101%);
+}
+
+.main-container:hover .image-overlay {
+  animation: hoverEffect 1s ease-in-out forwards;
+}
+
+@keyframes hoverEffect {
+  0% {transform: translateY(101%)}
+  20% {transform: translateY(-70%)}
+  50% {transform: translateY(20%)}
+  70% {transform: translateY(-30%)}
+  90% {transform: translateY(10%)}
+  100% {transform: translateY(0)}
+}
+/**/
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+}
+
+.img-container::before,
+.img-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.img-container::before {
+  content: "\f04b";
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  background: #f00;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  z-index: 10;
+}
+
+.img-container:hover::before {
+  animation: fade 1250ms infinite;
+}
+
+.img-container:hover::after {
+  background: pink;
+  z-index: 1;
+  animation: pulse 1000ms infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    color: white;
+  }
+  50% {
+    color: rgba(255,255,255, 0.5);
+  }
+  100% {
+    color: white;
+  }
+}
+/**/
+</style>
+</head>
+<body>
+
+<div ontouchstart="" class="wrapper">
+    <div class="row">
+        <div class="effect7 container">
+            <img src="https://user-images.githubusercontent.com/26748614/112761664-84f34c80-8ffc-11eb-8517-e7dd47c3fad2.jpg" alt="">
+            <div class="caption">
+                <h2>Can you tell me how to get how to get to Sesame Street?</h2>
+                <p>One two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="effect8 container">
+            <img src="https://user-images.githubusercontent.com/26748614/112761657-8290f280-8ffc-11eb-9eca-0f4bbb77f107.jpg" alt="">
+            <div class="caption">
+                <h2>Do you see any Teletubbies?</h2>
+                <button type="button" class="btn">I did</button>
+            </div>
+        </div>
+
+       
+    </div>
+
+
+    <div class="row">
+        <div class="effect10 container">
+            <img src="https://user-images.githubusercontent.com/26748614/112761648-815fc580-8ffc-11eb-8ebf-496748ed2db9.jpg" alt="">
+            <div class="caption">
+
+            </div>
+        </div>
+    </div>
+    <div class="photo">
+        <img class="photo__image" src="https://s-media-cache-ak0.pinimg.com/736x/02/d7/01/02d701b77a984a1b6cf970e6eb0468e1.jpg" alt="">
+        <div class="photo__overlay">
+          <h3>Overlay</h3>
+          <p>More Content</p>
+        </div>
+      </div>
+
+
+      <div class="wrapper">
+        <div class="image-container">
+          <img src="https://i.imgur.com/raG7g77.jpg" alt="">
+          <div class="slider1"></div>
+          <div class="slider2"></div>
+          <div class="image-caption">
+              <h1>Lorem ipsum dolor</h1>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="main-container">
+        <div class="image-overlay">d</div>
+        <img src="https://static.pexels.com/photos/226007/fall-foliage-maple-leaves-autumn-colours-emerge-226007.jpeg" alt="gallary 01">
+      </div>
+
+      <div class="img-container">
+        <img class="image" src="https://i.picsum.photos/id/1062/5092/3395.jpg?hmac=o9m7qeU51uOLfXvepXcTrk2ZPiSBJEkiiOp-Qvxja-k" alt="pug" />
+      </div>
+
+
+</div>
+
+
+</body>
+</html>
+
+
