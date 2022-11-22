@@ -32,13 +32,13 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li>trang chur</li>
-                    <li>gioi thieu</li>
-                    <li>san pham</li>
-                    <li>dich vu</li>
-                    <li>cong trinh</li>
-                    <li>san pham</li>
-                    <li>dich vu</li>
+                    <li><a class="menu-ami">trang chur</a></li>
+                    <li><a class="menu-ami">tr chur</a></li>
+                    <li><a class="menu-ami">trang schur</a></li>
+                    <li><a class="menu-ami">trang sdsschur</a></li>
+                  
+                   
+                    
                     <li><img src="images-d/icon-search.png" alt=""></li>
                 </ul>
             </div>
@@ -50,6 +50,32 @@
             <img src="images-d/LogoHK.png" alt="">
         </div>
     </div>
+    <div class="wrap_nav">
+        <nav class="btn-13">
+            <a href="#;"><span>HOME</span></a>
+            <a href="#;"><span>WORK</span></a>
+            <a href="#;"><span>CONTACT</span></a>
+        </nav>
+    </div>
+
+    <div class="wrapper">
+		<h1>Triangle Selector</h1>
+		<div class="selector">
+			<div class="triangle">
+			</div>
+		</div>
+		<div class="nav">
+			<div class="menu">One</div>
+			<div class="menu">Two</div>
+			<div class="menu">Three</div>
+			<div class="menu">Four</div>
+			<div class="menu">Five</div>
+		</div>
+		<div class="copyright">
+      <p>Copyright&copy; 2016 <span><a href="https://codepen.io/ryok_codepen/" target="_blank">Ryota Kitagawa</a></span> All rights reserved.</p>
+    </div>
+	</div>
+
     <article class="card shadow">
         <h1 class="card__title">Simple Card</h1>
         <p class="card__paragraph">High performance shadow effect with opacity and transform.</p>
@@ -327,5 +353,123 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            //change
+            var menu_width = 130;
+            var menu_num = 5;
+            var triangle_width = 10;
+        
+            //no change
+            var window_width = $(window).width();
+            var x_menu = 0;
+        
+            $(window).resize(function() {
+                window_width = $(window).width();
+            });
+        
+            $('.menu').hover(function() {
+                x_menu = $(this).offset().left;
+                move();
+            });
+        
+            function move() {
+                var wrapper_width = $('.wrapper').width();
+                var x_move = 0;
+                if (window_width >= (menu_width * menu_num)) {
+                    x_move = x_menu - ((window_width - wrapper_width) / 2) + (menu_width / 2 - triangle_width);
+                } else {
+                    x_move = x_menu + (menu_width / 2 - triangle_width);
+                }
+                $('.triangle').css({
+                    'left': x_move + 'px'
+                });
+            }
+        });
+    </script>
+    <script>
+
+
+
+        window.addEventListener('load', function(){
+            // btn-11
+            var movingBar = new MovingBar('.btn-11');
+            // btn-12
+            var delLineBar = new DelLineBar('.btn-12');
+            // btn-13 : Hover Moving Dot
+            var movingDot = new MovingDot('.btn-13');
+        });
+        
+        // btn-11 : Moving Bar
+        function MovingBar( nav ){
+            var $navMovingBar = document.querySelector( nav ),
+                $btnMenu11 = $navMovingBar.querySelectorAll('a'),
+                bar = document.createElement('span'),
+                width, left;
+        
+            bar.classList.add('effect');
+            $navMovingBar.appendChild( bar );
+        
+            for( var i=0, max=$btnMenu11.length; i<max; i++ ){
+                $btnMenu11[i].addEventListener('mouseenter', function(){
+                    width = this.offsetWidth,
+                    left = this.offsetLeft;
+                    barMovingCurrentMenu( width, left );
+                });
+            }
+        
+            function barMovingCurrentMenu( width, left ) {
+                bar.style.width = width + 'px';
+                bar.style.left = left + 'px';
+            }
+        }
+        
+        // btn-12 : Del Line Bar
+        function DelLineBar( nav ){
+            var $navDelLineBar = document.querySelector( nav ),
+               $btnMenu12 = $navDelLineBar.querySelectorAll('a');
+        
+           for( var i=0, max=$btnMenu12.length; i<max; i++ ){
+                $btnMenu12[i].addEventListener('mouseenter', function(){
+                    for( var j=0; j<$btnMenu12.length; j++ ){
+                        $btnMenu12[j].classList.remove('off');
+                        if( $btnMenu12[j] == this ) continue;
+                        $btnMenu12[j].classList.add('off');
+                    }
+                });
+            }
+        
+            $navDelLineBar.addEventListener('mouseleave', function(){
+                for( var i=0, max=$btnMenu12.length; i<max; i++ ){
+                    if( !$btnMenu12[i].classList.contains('off') ) continue;
+                    $btnMenu12[i].classList.remove('off');
+                }
+            });
+        }
+        
+        // btn-13 : Moving Dot
+        function MovingDot( nav ){
+            var $navMovingDotBar = document.querySelector( nav ),
+                  $btnMenu13 = $navMovingDotBar.querySelectorAll('a'),
+                 bar2 = document.createElement('span'),
+                 width2, left2;
+        
+            bar2.classList.add('dot');
+            $navMovingDotBar.appendChild( bar2 );
+        
+            for( var i=0, max=$btnMenu13.length; i<max; i++ ){
+                $btnMenu13[i].addEventListener('mouseenter', function(){
+                    width2 = this.offsetWidth,
+                    left2 = this.offsetLeft;
+                    barMovingCurrentMenu2( width2, left2 );
+                });
+            }
+        
+            function barMovingCurrentMenu2( width, left ) {
+                bar2.style.left = left + ( width / 2 ) + 'px';
+                bar2.style.opacity = 1;
+            }
+        }
+    </script>
 </body>
 </html>
