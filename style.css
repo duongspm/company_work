@@ -252,7 +252,26 @@ a.button:hover {
 	box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
 }
 
+/* menu */
+.wrap_nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
 
+    transition: all 0.5s ease-in-out;
+}
+.wrap_nav.sticky{
+background-color: #fff;
+opacity: 0.9;
+color: #000;
+box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+.wrap_nav.sticky .btn-13 a{
+    color: #000;
+}
+/* menu */
 .content-list{
     padding: 80px 0;
     display: flex;
