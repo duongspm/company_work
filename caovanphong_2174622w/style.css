@@ -1,0 +1,132 @@
+.service__list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    background: rgb(24,3,4);
+    
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+body{
+    
+}
+.service__item{
+    width: 390px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.service-img{ height:310px;width:100%;object-fit:cover;flex-shrink: 0;
+}
+.service__item-top{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.service-img>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service__title{
+    padding: 12px 40px;
+    width: 273px;
+    background-color: red;
+    border-radius: 10px;
+    text-align: center;
+
+    position: absolute;
+    bottom: -16px;
+    border: 1px solid red;
+    transition: 0.2s linear;
+}
+.service__title:hover{
+    background-color: white;
+}
+.service__title:hover .service-title{
+    color: red;
+}
+.service__title>span{
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.service__desc{
+    text-align: center;
+    margin-top: 30px;
+    
+}
+.service__desc>span{
+    color: white;
+    font-size: 14px;
+    line-height: 2;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.feedback__item{
+    width: 375px;
+    height: 221px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+
+    position: relative;
+}
+.feedback__card{
+    padding: 30px;
+}
+.feedback__content{
+    display: flex;
+    flex-direction: column;
+}
+.feedback__desc>span{
+    line-height: 1.5;
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.feedback__buttom{
+    padding-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.feedback__title{
+
+}
+.feedback__sao{
+    text-align: right;
+}
+.feedback__avt{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    /* box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px; */
+    border: 10px solid rgba(100,100,111,0.9);
+    position: absolute;
+    right: -8px;
+    bottom: -23%;
+}
+.feedback__avt>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
