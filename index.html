@@ -32,13 +32,13 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li>trang chur</li>
-                    <li>gioi thieu</li>
-                    <li>san pham</li>
-                    <li>dich vu</li>
-                    <li>cong trinh</li>
-                    <li>san pham</li>
-                    <li>dich vu</li>
+                    <li><a class="menu-ami">trang chur</a></li>
+                    <li><a class="menu-ami">tr chur</a></li>
+                    <li><a class="menu-ami">trang schur</a></li>
+                    <li><a class="menu-ami">trang sdsschur</a></li>
+                  
+                   
+                    
                     <li><img src="images-d/icon-search.png" alt=""></li>
                 </ul>
             </div>
@@ -50,6 +50,32 @@
             <img src="images-d/LogoHK.png" alt="">
         </div>
     </div>
+    <div class="wrap_nav">
+        <nav class="btn-13">
+            <a href="#;"><span>HOME</span></a>
+            <a href="#;"><span>WORK</span></a>
+            <a href="#;"><span>CONTACT</span></a>
+        </nav>
+    </div>
+
+    <div class="wrapper">
+		<h1>Triangle Selector</h1>
+		<div class="selector">
+			<div class="triangle">
+			</div>
+		</div>
+		<div class="nav">
+			<div class="menu">One</div>
+			<div class="menu">Two</div>
+			<div class="menu">Three</div>
+			<div class="menu">Four</div>
+			<div class="menu">Five</div>
+		</div>
+		<div class="copyright">
+      <p>Copyright&copy; 2016 <span><a href="https://codepen.io/ryok_codepen/" target="_blank">Ryota Kitagawa</a></span> All rights reserved.</p>
+    </div>
+	</div>
+
     <article class="card shadow">
         <h1 class="card__title">Simple Card</h1>
         <p class="card__paragraph">High performance shadow effect with opacity and transform.</p>
@@ -327,5 +353,18 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop()){
+                    $('.wrap_nav').addClass('sticky');
+                }else{
+                    $('.wrap_nav').removeClass('sticky');
+                }
+            });
+        });
+    </script>
+    
 </body>
 </html>
