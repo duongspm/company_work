@@ -1,0 +1,17 @@
+news
+	dịch vụ 1 cấp 268x244
+	tin tức 375x300
+product
+	sản phẩm 2 cấp 260x233
+	cấp 1 nb
+
+album: công trình 375
+
+photo
+	logo 136x136
+	slide 1366x515
+	video avt
+static
+	liên hệ
+	slogan
+	giới thiệu gallay nhiều hình ảnh
