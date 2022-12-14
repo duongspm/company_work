@@ -1,0 +1,17 @@
+display: grid;
+  grid-gap: 1px;
+  grid-auto-rows: minmax(150px, auto);
+
+----------------------------
+
+margin-top đẩy ra khỏi thẻ div
+visibility:hidden;opacity:0;transition: 0.5s ẩn mục cần ẩn
+hover: visibility: visible;opacity:100;margin-top:0px đẩy hiện lên
+
+
+----------------------------
+đẩy lên
+.cardd:hover .card__price {
+    -webkit-transform: translate(-101px,-70px);
+    transform: translate(-101px,-70px);
+}
