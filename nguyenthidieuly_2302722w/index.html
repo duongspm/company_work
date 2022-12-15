@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nguyenthidieuly_2302722w</title>
+</head>
+<style>
+.wrapper
+{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.hover_xam { 
+    position:relative; 
+    overflow:hidden; 
+}
+.hover_xam::before { 
+    content:""; 
+    background:rgba(255, 255, 255, .5); 
+    bottom:0; 
+    left:0; 
+    position:absolute; 
+    -webkit-transform:rotate(90deg); 
+    -moz-transform:rotate(90deg); 
+    -ms-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    transform:rotate(90deg); 
+    -khtml-opacity:1; 
+    -o-opacity:1; 
+    -ms-opacity:1; 
+    -webkit-opacity:1; 
+    -moz-opacity:1; 
+    opacity:1; 
+    width:0; 
+    height:0; 
+    z-index:2; 
+}
+.hover_xam::after { 
+    content:""; 
+    background:rgba(255, 255, 255, .5); 
+    top:0; right:0; 
+    position:absolute; 
+    -webkit-transform:rotate(90deg); 
+    -moz-transform:rotate(90deg); 
+    -ms-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    transform:rotate(90deg); 
+    -khtml-opacity:1; 
+    -o-opacity:1; 
+    -ms-opacity:1; 
+    -webkit-opacity:1; 
+    -moz-opacity:1; 
+    opacity:1; 
+    width:0; height:0; 
+    z-index:2; 
+}
+.hover_xam:hover::before, 
+.hover_xam:hover::after 
+{ 
+    -webkit-transform:rotateY(180deg); 
+    -moz-transform:rotateY(180deg); 
+    -ms-transform:rotateY(180deg); 
+    -o-transform:rotateY(180deg); 
+    transform:rotateY(180deg); 
+    -webkit-transition-duration:1.3s; 
+    -moz-transition-duration:1.3s; 
+    -ms-transition-duration:1.3s; 
+    -o-transition-duration:1.3s; 
+    transition-duration:1.3s; 
+    -khtml-opacity:0; 
+    -o-opacity:0; 
+    -ms-opacity:0; 
+    -webkit-opacity:0; 
+    -moz-opacity:0; 
+    opacity:0; height:100%; width:100%; 
+}
+.grid_pro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 22px;
+}
+.pro-name>a{
+    text-decoration: none !important;
+}
+.item_pro {
+    text-align: center;
+    position: relative;
+}
+.flip_font >h3 a { font-size:18px; }
+.flip_font >h3 {
+    margin-top:15px;
+}
+.flip_font >h3 a {
+    font-size:20px;
+    font-family:'UTMBebas';
+    color:#000;
+}
+.flip_pro {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    background:#8e8675;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:0.3s -webkit-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    -o-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    transform:rotateY(-180deg);
+}
+.flip_font {
+    transition:0.3s -webkit-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -webkit-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    -o-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    transform:rotateY(0deg);
+}
+.info_flip {
+}
+.info_flip h3 {
+}
+.info_flip h3 a {
+    color:#000;
+    font-family:'UTMBebas';
+    font-size:20px;
+}
+.mota_flip {
+    margin:10px 0;
+}
+.price_flip {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.price_flip p {
+    margin-right:10px;
+    text-decoration:line-through;
+}
+.price_flip span {
+    font-weight:700;
+}
+.item_pro:hover .flip_pro {
+    z-index:2;
+    -webkit-transform:rotateY(0deg);
+    transform:rotateY(0deg);
+    -webkit-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    -o-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    transition:all .7s cubic-bezier(.5, .12, .46, .88);
+}
+.item_pro:hover .flip_font {
+    -webkit-transform:rotateY(-180deg);
+    -webkit-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    -o-transition:all .7s cubic-bezier(.5, .12, .46, .88);
+    transition:all .7s cubic-bezier(.5, .12, .46, .88);
+}
+.khung_sanpham {
+    display:flex;
+    justify-content:space-between;
+}
+.left-sp {
+    width:230px;
+    position:relative;
+}
+.sticky-m {
+position:sticky;
+    top:51px;
+}
+.right-sp {
+    width:calc(100% - 254px);
+}
+.grid_pro {
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-gap:22px;
+}
+
+
+.box_p {
+    max-height:300px;
+    padding-right:10px;
+    overflow:hidden 
+}
+.box_p:hover {
+    overflow:auto 
+}
+.box_p::-webkit-scrollbar {
+    width:3px;
+}
+.box_p::-webkit-scrollbar-track {
+    background:#fff;
+}
+.box_p::-webkit-scrollbar-thumb {
+    background-color:#000;
+    background:#000;
+    outline:0px solid slategrey;
+}
+
+</style>
+<body>
+    <div class="wrapper">
+        <a class="hover_xam" href="" title="" data-fancybox="hinhthemc" data-src="upload/product/e7920f7b-bbb4-4d42-907e-cfb38ae9f819-8181.jpeg">
+            <img src='http://normad.vn/thumbs/315x445x1/upload/product/44a28542-3740-4bf5-9e83-00d55424916e-5928.jpeg'>
+        </a>
+        <div class="grid_pro">
+            <div class="item_pro">
+                <div class="flip_font">
+                    <div class="img_pro hover_xam">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">
+                            <img src="http://normad.vn/thumbs/220x295x1/upload/product/ce5bf581-b638-4902-95f4-c8b5aee0dd15-2395.png" alt="Chocolate strawberry">
+                        </a>
+                    </div>
+                    <h3 class="pro-name">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                    </h3>
+                </div>
+                <div class="flip_pro">                             
+                    <div class="info_flip">
+                        <h3 class="pro-name">
+                            <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                        </h3>
+                        <div class="mota_flip"></div>
+                        <div class="price_flip">
+                                <p>80.000đ</p>
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item_pro">
+                <div class="flip_font">
+                    <div class="img_pro">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">
+                            <img src="http://normad.vn/thumbs/220x295x1/upload/product/ce5bf581-b638-4902-95f4-c8b5aee0dd15-2395.png" alt="Chocolate strawberry">
+                        </a>
+                    </div>
+                    <h3 class="pro-name">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                    </h3>
+                </div>
+                <div class="flip_pro">                             
+                    <div class="info_flip">
+                        <h3 class="pro-name">
+                            <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                        </h3>
+                        <div class="mota_flip"></div>
+                        <div class="price_flip">
+                                <p>80.000đ</p>
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_pro">
+                <div class="flip_font">
+                    <div class="img_pro">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">
+                            <img src="http://normad.vn/thumbs/220x295x1/upload/product/ce5bf581-b638-4902-95f4-c8b5aee0dd15-2395.png" alt="Chocolate strawberry">
+                        </a>
+                    </div>
+                    <h3 class="pro-name">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                    </h3>
+                </div>
+                <div class="flip_pro">                             
+                    <div class="info_flip">
+                        <h3 class="pro-name">
+                            <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                        </h3>
+                        <div class="mota_flip"></div>
+                        <div class="price_flip">
+                                <p>80.000đ</p>
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_pro">
+                <div class="flip_font">
+                    <div class="img_pro">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">
+                            <img src="http://normad.vn/thumbs/220x295x1/upload/product/ce5bf581-b638-4902-95f4-c8b5aee0dd15-2395.png" alt="Chocolate strawberry">
+                        </a>
+                    </div>
+                    <h3 class="pro-name">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                    </h3>
+                </div>
+                <div class="flip_pro">                             
+                    <div class="info_flip">
+                        <h3 class="pro-name">
+                            <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                        </h3>
+                        <div class="mota_flip"></div>
+                        <div class="price_flip">
+                                <p>80.000đ</p>
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_pro">
+                <div class="flip_font">
+                    <div class="img_pro">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">
+                            <img src="http://normad.vn/thumbs/220x295x1/upload/product/ce5bf581-b638-4902-95f4-c8b5aee0dd15-2395.png" alt="Chocolate strawberry">
+                        </a>
+                    </div>
+                    <h3 class="pro-name">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                    </h3>
+                </div>
+                <div class="flip_pro">                             
+                    <div class="info_flip">
+                        <h3 class="pro-name">
+                            <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                        </h3>
+                        <div class="mota_flip"></div>
+                        <div class="price_flip">
+                                <p>80.000đ</p>
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item_pro">
+                <div class="flip_font">
+                    <div class="img_pro">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">
+                            <img src="http://normad.vn/thumbs/220x295x1/upload/product/ce5bf581-b638-4902-95f4-c8b5aee0dd15-2395.png" alt="Chocolate strawberry">
+                        </a>
+                    </div>
+                    <h3 class="pro-name">
+                        <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                    </h3>
+                </div>
+                <div class="flip_pro">                             
+                    <div class="info_flip">
+                        <h3 class="pro-name">
+                            <a href="chocolate-strawberry" title="Chocolate strawberry">Chocolate strawberry</a>
+                        </h3>
+                        <div class="mota_flip"></div>
+                        <div class="price_flip">
+                                <p>80.000đ</p>
+                                <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
