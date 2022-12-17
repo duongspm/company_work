@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Duongg */
+.albumd{
+	background-color: #e9d5c4;
+	position: relative;
+	padding-bottom: 70px;
+}
+.img-item11{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.albumd__heading{
+	margin-bottom: 30px;
+}
+.albumd__heading>span{
+	font-family: var(--font-heading);
+	color: #42220b;
+	font-size: 36px;
+	margin-left: 180px;
+	position: relative;
+}
+.albumd__heading>span::after{
+	position: absolute;
+	content: "";
+	bottom: 8px;
+	left: -160px;
+	width: 160px;
+	height: 2px;
+	background-color: #9a6600;
+}
+.albumd-item-left,
+.albumd-item-right{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+.albumd-item-child{
+	position: absolute;
+    top: 35%;
+    right: -20%;
+}
+.albumd-item-child>a>img{
+	border-radius: 0px 100px 0px 0px;
+}
+.albumd-item-child2{
+	position: absolute;
+    top: 25%;
+    right: 40%;
+}
+.albumd-item-child2>a>img{
+	border-radius: 100px 0px 0px 0px;
+}
+.albumd__list{
+	display: flex;
+	justify-content: space-between;
+}
+.albumd-item2{
+	margin-top: 50px;
+}
+.albumd-item3{
+	margin-top: 300px;
+}
+.albumd-item-left-text{
+	margin-top: auto;
+	text-align: end;
+}
+.albumd-item-left-text>span{
+	font-family: 'SVNJanelotus', cursive;
+	/* font-size: 60px; */
+	color: #42220b;
+}
+.footerr{
+	display: flex;
+	justify-content: space-between;
+}
+.footer__left{
+	width: 35%;
+}
+.footer__right{
+	width: 60%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 30px;
+}
+.footer-fb>.fb-bg>img{
+	border-top-left-radius: 50%;
+}
+.map-footer{
+	position: relative;
+}
+.map-footer::after{
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: calc(100% + 10px);
+	height: calc(100% + 10px);
+	border-top-left-radius: 50%;
+	background-color: #9a6700;
+	z-index: 1;
+}
+.map-footer iframe {
+	max-width: 400px;
+	max-height: 390px;
+	border-top-left-radius: 50%;
+	position: relative;
+	z-index: 3;
+}
+.footer-article {
+	background: url('../images/bg-footer.png');
+	background-size: 100% 100%;
+	padding-top: 120px;
+	position: relative;
+}
+.img-item-ft{
+	position: absolute;
+    top: -20%;
+    right: 0;
+}
+/* Duongg */
+</style>
+<body>
+    <div class="albumd">
+        <div class="img-item11">
+            <img src="assets/images/img-item-ft.png" alt="">
+        </div>
+        <div class="wrapper">
+            <div class="albumdd">
+                <div class="albumd__heading">
+                    <span>Thư viện ảnh <?=$setting['name'.$lang]?></span>
+                </div>
+                <div class="albumd__list">
+                    <div class="albumd-item-left">
+                        <?php if(!empty($albumd[0])){?>
+                            <div class="albumd-item">
+                                <a class="hover_xam" href="<?=$albumd[0][$sluglang]?>" title="<?=$albumd[0]['name'.$lang]?>">
+                                    <?=$func->getImage(['class' => '', 'sizes' => '310x355x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $albumd[0]['photo'], 'alt' => $albumd[0]['name'.$lang]])?>
+                                </a>
+                            </div>
+                        <?php }?>
+                        <div class="albumd-item-left-text">
+                            <span>Hương vị của đam mê</span>
+                        </div>
+                        <?php if(!empty($albumd[3])){?>
+                            <div class="albumd-item-child">
+                                <a class="hover_xam" href="<?=$albumd[3][$sluglang]?>" title="<?=$albumd[3]['name'.$lang]?>">
+                                    <?=$func->getImage(['class' => '', 'sizes' => '250x260x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $albumd[3]['photo'], 'alt' => $albumd[3]['name'.$lang]])?>
+                                </a>
+                            </div>
+                        <?php }?>
+                    </div>
+                    <?php if(!empty($albumd[1])){?>
+                        <div  class="albumd-item albumd-item2">
+                            <a class="hover_xam" href="<?=$albumd[1][$sluglang]?>" title="<?=$albumd[1]['name'.$lang]?>">
+                                <?=$func->getImage(['class' => '', 'sizes' => '380x500x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $albumd[1]['photo'], 'alt' => $albumd[1]['name'.$lang]])?>
+                            </a>
+                        </div>
+                    <?php }?>
+                    <div class="albumd-item-right">
+                        <?php if(!empty($albumd[2])){?>
+                            <div class="albumd-item albumd-item3">
+                                <a class="hover_xam" href="<?=$albumd[2][$sluglang]?>" title="<?=$albumd[2]['name'.$lang]?>">
+                                    <?=$func->getImage(['class' => '', 'sizes' => '310x350x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $albumd[2]['photo'], 'alt' => $albumd[2]['name'.$lang]])?>
+                                </a>
+                            </div>
+                        <?php }?>
+                        <?php if(!empty($albumd[4])){?>
+                            <div class="albumd-item-child2">
+                                <a class="hover_xam" href="<?=$albumd[4][$sluglang]?>" title="<?=$albumd[4]['name'.$lang]?>">
+                                    <?=$func->getImage(['class' => '', 'sizes' => '250x260x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $albumd[4]['photo'], 'alt' => $albumd[4]['name'.$lang]])?>
+                                </a>
+                            </div>
+                        <?php }?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    <div class="footer-article">
+        <div class="img-item-ft">
+            <img src="assets/images/img-item-ft.png" alt="">
+        </div>
+        <div class="wrapper">
+            <div class="footerr">
+                <div class="footer__left">
+                    <div class="footer__heading">
+                        <span class="footer__title">Thông tin liên hệ</span>
+                        <span class="footer__name">
+                            <?=$setting['name'.$lang]?>
+                        </span>
+                    </div>
+                    <div class="footer__address">
+                        <?= htmlspecialchars_decode($footer['content' . $lang]) ?>
+                    </div>
+                    <div class="footer-copyright">Copyright © 2022 <?= $setting['name' . $lang] ?>. All Rights Reserved. Designed by Nina.vn</div>
+                </div>
+                <div class="footer__right">
+                    <div class="footer-fb">
+                        <div class="fb-bg">
+                            <?=$func->getImage(['class' => '', 'sizes' => '300x250x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $facebook[0]['photo'], 'alt' => $facebook[0]['name'.$lang]])?>
+                        </div>
+                        <div class="fb-link">
+                            <a href="<?=$facebook['link']?>"><?=$facebook['name'.$lang]?></a>
+                        </div>
+                    </div>
+                    <div class="footer__map">
+                        <div class="map-footer">
+                            <?= htmlspecialchars_decode($optsetting['coords_iframe']) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
